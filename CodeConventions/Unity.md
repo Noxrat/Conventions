@@ -1,4 +1,9 @@
 ## Class code structure
+Files above 100 lines have to follow these conventions to provide structured and clean code.<br/>
+The 100 line limitation comes from existing codebase to help migrate code to new standard.
+
+<hr/>
+
 - **Instance** classes may not contain static information.
 Instance class must contain a few mandatory regions in this order:
 ```csharp
