@@ -51,8 +51,10 @@ Any config: game convars, KVs etc. must be defined through ScriptableObject.
 ### ScriptableObject
 Game config, KVs, convars are stored in ScriptableObjects.
 
-### Managers
-Isolated managing classes that manage scopedobjects. For example, a `MenuManager.cs` is not statically exposed manager of menus. If, at some point the manager is required (to switch to some menu through code), *ANOTHER* class `MenuService.cs` will be responsible for exposing menu manager and perform calls to the MenuManager.
+### Manager (Manager/Group)
+Isolated managing classes that manage scoped objects. For example, a `MenuManager.cs` is not statically exposed manager of menus. If, at some point the manager is required (to switch to some menu through code), *ANOTHER* class `MenuService.cs` will be containe reference to MenuController for exposing menu manager and perform calls to the MenuManager.
+
+Naming convention of manager and group are disting this way: Manager (manages hierarchy and performs complex tasks) & Group (groups children & exposes shared state).
 
 ### Services
 Statically-exposed (Singleton<T>) or purely static class that manages a certain aspect of the game.
