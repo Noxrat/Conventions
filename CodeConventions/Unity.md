@@ -37,37 +37,9 @@ private void _Method1(){}
 ```
 
 - **Singleton** classes's instance methods and variables must be public and may contain public/private static methods and fields.
-Singleton class is for Unity-only Managers and has the following structure:
-```csharp
-class <SomeType> : UnitySingleton {
-// Override to get casted instance
-public override <SomeType> instance { get => (<SomeType>) _instance; }
+`Singleton<T>` class usage should be refefered to in [Unity Architecture](https://github.com/Noxrat/Conventions/blob/main/Architecture/Unity.md)
 
-// This region contain all instance variables.
-#region Data
-public int someVariable1;
-public string someVariable2;
 
-// public static fields are discouraged
-#endregion
-
-// This region has static methods of the class
-#region Static Methods
-public static void Method0(){}
-//private static methods are descouraged
-#endregion
-
-// This region has instance methods of the class
-#region Methods
-public void Method3(){}
-// if Awake() method is required
-void Awake(){
-  base.Awake();
-  // code here ...
-}
-#endregion
-}
-```
 - **Static** classes's structure:
 ```csharp
 static class <SOME_TYPE> {
